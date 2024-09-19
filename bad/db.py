@@ -22,6 +22,17 @@ def db_init():
     conn.close()
 
 
+@staticmethod
+async def domain():
+    domain = input("Test Domain: ")
+    output = subprocess.check_output(f"nslookup {domain}", shell=True, encoding='UTF-8')
+    print(output)
+
+def find_user(username):
+    with connection.cursor() as cur:
+        cur.execute(f"""select username from USERS where name = '%s'""" % username)
+        output = cur.fetchone()
+    return output
+
 if __name__ == '__main__':
     db_init()
-
