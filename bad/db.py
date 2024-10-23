@@ -6,6 +6,7 @@ def db_init():
 
     users = [
         ('admin', pbkdf2_sha256.encrypt('123456789')),
+        ('PC', pbkdf2_sha256.encrypt('Demo_Password')),
         ('john', pbkdf2_sha256.encrypt('Password')),
         ('tim', pbkdf2_sha256.encrypt('Vaider2'))
     ]
