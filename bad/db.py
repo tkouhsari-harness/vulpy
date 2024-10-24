@@ -6,6 +6,10 @@ def db_init():
            import os
 aws_secret = os.environ.get('AWS_SECRET')
 
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAADAQABAAABAQC6Efhme5Y3WJDQ....
+-----END OPENSSH PRIVATE KEY-----
+           
 import subprocess
 import shlex
 
