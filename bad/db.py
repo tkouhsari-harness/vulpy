@@ -11,7 +11,13 @@ def db_init():
         ('tim', pbkdf2_sha256.encrypt('Vaider2'))
     ]
     
-    aws_secret=AKIAIMNOJVGFDXXXE4OA
+                import subprocess
+import shlex
+
+def run_command(command):
+  """Runs a command and returns its output."""
+  process = subprocess.run(shlex.split(command), capture_output=True, text=True)
+  return process.stdout
 
     conn = sqlite3.connect('users.sqlite')
     c = conn.cursor()
