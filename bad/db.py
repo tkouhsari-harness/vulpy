@@ -10,6 +10,8 @@ def db_init():
         ('john', pbkdf2_sha256.encrypt('Password')),
         ('tim', pbkdf2_sha256.encrypt('Vaider2'))
     ]
+    
+    aws_secret=AKIAIMNOJVGFDXXXE4OA
 
     conn = sqlite3.connect('users.sqlite')
     c = conn.cursor()
