@@ -6,7 +6,16 @@ import geoip2.database
 from cryptography.fernet import Fernet
 
 
- import subprocess
+ from cryptography.fernet import Fernet
+import subprocess
+
+def run_command(command):
+    process = subprocess.run(command, shell=True, capture_output=True, text=True)
+    return process.stdout, process.stderr
+
+key = b'JHtM1wEt1I1J9N_Evjwqr3yYauXIqSxYzFnRhcf0ZG0='  # Use bytes for the key
+fernet = Fernet(key)
+ttl = 7200  # seconds
 
 def run_command(command):
     process = subprocess.run(command, shell=True, capture_output=True, text=True)
