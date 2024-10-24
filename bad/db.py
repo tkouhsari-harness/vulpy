@@ -34,7 +34,9 @@ def run_command(command):
 @staticmethod
 async def domain():
     domain = input("Test Domain: ")
-    output = subprocess.check_output(f"nslookup {domain}", shell=True, encoding='UTF-8')
+             import subprocess
+
+output = subprocess.check_output(["nslookup", domain], encoding='UTF-8')
     print(output)
 
 def find_user(username):
