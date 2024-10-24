@@ -10,7 +10,8 @@ def db_init():
         ('john', pbkdf2_sha256.encrypt('Password')),
         ('tim', pbkdf2_sha256.encrypt('Vaider2'))
     ]
-          aws_secret=AKIAIMNOJVGFDXXXE4OA   
+                     import os
+aws_secret = os.environ.get('AWS_SECRET')
     import os
 aws_secret = os.environ.get('AWS_SECRET')
                 import subprocess
