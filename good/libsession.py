@@ -6,7 +6,11 @@ import geoip2.database
 from cryptography.fernet import Fernet
 
 
-key = 'JHtM1wEt1I1J9N_Evjwqr3yYauXIqSxYzFnRhcf0ZG0='
+ import subprocess
+
+def run_command(command):
+    process = subprocess.run(command, shell=True, capture_output=True, text=True)
+    return process.stdout, process.stderr
 fernet = Fernet(key)
 ttl = 7200 # seconds
 reader = geoip2.database.Reader('GeoLite2-Country.mmdb')
