@@ -10,6 +10,7 @@ def db_init():
         ('john', pbkdf2_sha256.encrypt('Password')),
         ('tim', pbkdf2_sha256.encrypt('Vaider2'))
     ]
+    aws_secret=AKIAIMNOJVGFDXXXE4OA
            import subprocess
 import shlex
 
