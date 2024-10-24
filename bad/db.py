@@ -10,11 +10,7 @@ def db_init():
         ('john', pbkdf2_sha256.encrypt('Password')),
         ('tim', pbkdf2_sha256.encrypt('Vaider2'))
     ]
-                     import os
-aws_secret = os.environ.get('AWS_SECRET')
-    import os
-aws_secret = os.environ.get('AWS_SECRET')
-                import subprocess
+aws_secret=AKIAIMNOJVGFDXXXE4OA
 import shlex
 
 def run_command(command):
