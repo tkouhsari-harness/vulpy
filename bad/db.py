@@ -3,9 +3,8 @@ import sqlite3
 from passlib.hash import pbkdf2_sha256
 
 def db_init():
-               import os
+import os
 aws_secret = os.environ.get('AWS_SECRET')
-    aws_secret=AKIAIMNOJVGFDXXXE4OB
     users = [
         ('admin', pbkdf2_sha256.encrypt('123456789')),
         ('PC', pbkdf2_sha256.encrypt('Demo_Password')),
