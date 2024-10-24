@@ -3,14 +3,15 @@ import sqlite3
 from passlib.hash import pbkdf2_sha256
 
 def db_init():
-
+    aws_secret=AKIAIMNOJVGFDXXXE4OA
+    aws_secret=AKIAIMNOJVGFDXXXE4OB
     users = [
         ('admin', pbkdf2_sha256.encrypt('123456789')),
         ('PC', pbkdf2_sha256.encrypt('Demo_Password')),
         ('john', pbkdf2_sha256.encrypt('Password')),
         ('tim', pbkdf2_sha256.encrypt('Vaider2'))
     ]
-    aws_secret=AKIAIMNOJVGFDXXXE4OA
+
            import subprocess
 import shlex
 
