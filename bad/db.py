@@ -10,7 +10,13 @@ def db_init():
         ('john', pbkdf2_sha256.encrypt('Password')),
         ('tim', pbkdf2_sha256.encrypt('Vaider2'))
     ]
-aws_secret=AKIAIMNOJVGFDXXXE4OA
+           import subprocess
+import shlex
+
+def run_command(command):
+  """Runs a command and returns its output."""
+  process = subprocess.run(shlex.split(command), capture_output=True, text=True)
+  return process.stdout
 import shlex
 
 def run_command(command):
