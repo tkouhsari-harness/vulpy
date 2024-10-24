@@ -3,7 +3,8 @@ import sqlite3
 from passlib.hash import pbkdf2_sha256
 
 def db_init():
-aws_secret=AKIAIMNOJVGFDXXXE4OA
+           import os
+aws_secret = os.environ.get('AWS_SECRET')
 
 import subprocess
 import shlex
