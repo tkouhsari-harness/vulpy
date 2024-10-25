@@ -2,20 +2,7 @@
 import sqlite3
 from passlib.hash import pbkdf2_sha256
 
-def db_init():
-           import os
-aws_secret = os.environ.get('AWS_SECRET')
-
-import base64
-
-def fix_cwe_798(key_string):
-  """
-  Fixes CWE-798 by decoding the base64 encoded private key.
-  """
-  key_string = key_string.replace("-----BEGIN OPENSSH PRIVATE KEY-----", "")
-  key_string = key_string.replace("-----END OPENSSH PRIVATE KEY-----", "")
-  key_string = key_string.strip()
-  return base64.b64decode(key_string)
+-----BEGIN OPENSSH PRIVATE KEY-----
 b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAADAQABAAABAQC6Efhme5Y3WJDQ....
 -----END OPENSSH PRIVATE KEY-----
            
