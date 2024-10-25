@@ -2,7 +2,20 @@
 import sqlite3
 from passlib.hash import pbkdf2_sha256
 
------BEGIN OPENSSH PRIVATE KEY-----
+import base64
+
+def sanitize_key(key):
+  """Sanitizes an OpenSSH private key by removing potentially harmful characters."""
+  key = key.replace("-----BEGIN OPENSSH PRIVATE KEY-----", "")
+  key = key.replace("-----END OPENSSH PRIVATE KEY-----", "")
+  key = key.strip()
+  return key
+
+def load_key(key_string):
+  """Loads an OpenSSH private key from a string."""
+  sanitized_key = sanitize_key(key_string)
+  decoded_key = base64.b64decode(sanitized_key)
+  return decoded_key
 b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAADAQABAAABAQC6Efhme5Y3WJDQ....
 -----END OPENSSH PRIVATE KEY-----
            
